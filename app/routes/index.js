@@ -51,10 +51,7 @@ module.exports = function(app, passport) {
 
 	var clickHandler = new ClickHandler();
 
-	app.route('/').get(function(req, res) {
 
-		console.log("hello there!")
-	});
 
 	//for freecodecamp back end porject: URL Shortener Microservice
 	/*
@@ -119,6 +116,10 @@ module.exports = function(app, passport) {
 			console.log("wrong route: " + short_url_id)
 		}
 
+	})
+	
+	app.route('/').get(function(req, res) {
+		res.sendFile(path + '/public/index.html');
 	})
 
 };
