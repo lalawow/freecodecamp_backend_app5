@@ -86,7 +86,10 @@ module.exports = function(app, passport) {
 
 	app.route('/new/:_url').get(function(req, res) {
 		var url = req.params._url
-		insertUrl(url, req, res)
+			res.writeHead(200, {
+		'Content-Type': 'application/json'
+	})
+	res.end("Sorry, it's an invalid url.")
 
 	})
 
